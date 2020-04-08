@@ -3,7 +3,7 @@
 </p>
 # Project Flow
 <p align="center">
-    <img src="flow.png" width="250"/>
+    <img src="nav_flow.png" width="250"/>
 </p>
 <br>
 
