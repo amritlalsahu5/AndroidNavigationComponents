@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_graph"
+        app:startDestination="@id/mainFragment">
+
+    <!-- MainFragment -->
+    <fragment android:id="@+id/mainFragment"
+            android:name="com.codehangouts.navcomponents.MainFragment"
+            android:label="fragment_main"
+            tools:layout="@layout/fragment_main">
+    <action android:id="@+id/action_mainFragment_to_shoppingItemDetails"
+            app:destination="@id/shoppingItemDetailsFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+    <action android:id="@+id/action_mainFragment_to_viewTransactionFragment"
+            app:destination="@id/viewTransactionFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+    <action android:id="@+id/action_mainFragment_to_viewBalanceFragment"
+            app:destination="@id/viewBalanceFragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+
+    </fragment>
+
+
+    <!-- ViewTransactionFragment -->
+    <fragment android:id="@+id/viewTransactionFragment"
+            android:name="com.codehangouts.navcomponents.TransactionHistoryFragment"
+            android:label="fragment_view_transaction"
+            tools:layout="@layout/fragment_view_transaction"/>
+
+    <!-- ViewBalanceFragment -->
+    <fragment android:id="@+id/viewBalanceFragment"
+            android:name="com.codehangouts.navcomponents.WalletBalanceFragment"
+            android:label="fragment_view_balance"
+            tools:layout="@layout/fragment_view_balance"/>
+
+    <!-- shoppingItemDetailsFragment -->
+    <fragment android:id="@+id/shoppingItemDetailsFragment"
+            android:name="com.codehangouts.navcomponents.ShoppingItemDetailsFragment"
+            android:label="fragment_shopping_details"
+            tools:layout="@layout/fragment_item_details">
+        <action android:id="@+id/action_itemDetails_to_placeBuyOrderFragment"
+                app:destination="@id/placeBuyOrderFragment"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                />
+    </fragment>
+
+    <!-- PlaceBuyOrderFragment -->
+    <fragment android:id="@+id/placeBuyOrderFragment"
+            android:name="com.codehangouts.navcomponents.PlaceBuyOrderFragment"
+            android:label="fragment_place_order"
+            tools:layout="@layout/fragment_place_buy_order">
+
+
+        <argument android:name="amount"
+                android:defaultValue="None"/>
+
+        <argument android:name="wallet"
+                app:argType="com.codehangouts.navcomponents.Money"/>
+
+        <action android:id="@+id/action_placeBuyOrderFragment_to_confirmationFragment"
+                app:destination="@id/confirmationFragment"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                />
+    </fragment>
+
+
+
+    <!-- ConfirmationFragment -->
+    <fragment android:id="@+id/confirmationFragment"
+            android:name="com.codehangouts.navcomponents.ConfirmationFragment"
+            android:label="fragment_confirmation"
+            tools:layout="@layout/fragment_payment_confirmation">
+
+        <action android:id="@+id/action_confirmationFragment_to_mainFragment"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popUpTo="@id/mainFragment"
+                />
+    </fragment>
+
+
+
+</navigation>

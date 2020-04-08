@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainFragment"
+        android:id="@+id/parentLayout">
+
+    <Button
+        android:id="@+id/btn_shop_now"
+        android:text="@string/shop_now"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+            android:background="@color/btn_blue_color"
+        app:layout_constraintBottom_toTopOf="@id/btn_view_history" android:layout_marginBottom="20dp"
+    />
+
+    <Button
+            android:id="@+id/btn_view_history"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="@string/view_history"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/btn_shop_now"
+            app:layout_constraintEnd_toEndOf="@id/btn_shop_now"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@android:color/darker_gray"
+            />
+
+    <Button
+            android:id="@+id/btn_view_balance"
+            android:text="@string/view_balance"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_view_history"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:background="@color/colorPrimary"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
